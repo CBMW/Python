@@ -1,0 +1,67 @@
+import os
+import json
+import random
+
+def main_menu():
+    print("\n🌟 Welcome to FlashCardX Study Assistant! 🌟")
+    print("1. Create a new flashcard file")
+    print("2. Open an existing flashcard file")
+    print("3. Exit")
+    choice = input("Please choose an option (1/2/3): ")
+    return choice
+
+def create_flashcard_file():
+    num_questions = int(input("How many questions would you like to add? "))
+    questions = {}
+    for i in range(num_questions):
+        question = input(f"Enter question {i+1}: ")
+        answer = input(f"Enter answer for question {i+1}: ")
+        questions[question] = answer
+
+    file_count = len([f for f in os.listdir() if f.startswith("FlashCard") and f.endswith(".json")])
+    filename = f"FlashCard{file_count + 1}.json"
+    with open(filename, 'w') as f:
+        json.dump(questions, f, indent=4)
+    print(f"\n✨ Flashcard file '{filename}' created successfully! ✨")
+
+def open_flashcard_file():
+    files = [f for f in os.listdir() if f.startswith("FlashCard") and f.endswith(".json")]
+    if not files:
+        print("\n🚫 No flashcard files found! Please create a new one first. 🚫")
+        return
+
+    print("\n📂 Available flashcard files:")
+    for i, file in enumerate(files):
+        print(f"{i + 1}. {file}")
+    choice = int(input("Choose a file to open: ")) - 1
+    filename = files[choice]
+
+    with open(filename, 'r') as f:
+        questions = json.load(f)
+
+    correct_answers = 0
+    for question, answer in questions.items():
+        user_answer = input(f"\n❓ {question}: ")
+        if user_answer.lower() == answer.lower():
+            print("✅ Correct!")
+            correct_answers += 1
+        else:
+            print(f"❌ Incorrect! The correct answer is: {answer}")
+
+    print(f"\n🎉 You got {correct_answers} out of {len(questions)} correct! 🎉")
+
+def main():
+    while True:
+        choice = main_menu()
+        if choice == '1':
+            create_flashcard_file()
+        elif choice == '2':
+            open_flashcard_file()
+        elif choice == '3':
+            print("\n👋 Goodbye! Happy studying! 👋")
+            break
+        else:
+            print("\n🚫 Invalid choice! Please try again. 🚫")
+
+if __name__ == "__main__":
+    main()
