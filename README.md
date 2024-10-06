@@ -1,7 +1,7 @@
 # Python  
 Collection of Python scripts  
 -FlashCardX {Simple flash card study assistant}  
--VMFinder2.py {Finds virtual machine files/images and moves them to specified folder}  
+-VMFinder2.py {Finds virtual machine files}  
 -rshell.py {Simple reverse shell script}  
 
 ## Please note;  
