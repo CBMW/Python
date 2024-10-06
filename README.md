@@ -1,8 +1,8 @@
 # Python  
 Collection of Python scripts  
 -FlashCardX {Simple flash card study assistant}  
--VMFinder2.py {Finds virtual machine files on system}  
--rshell.py {Simple reverse shell script}  
+-VMFinder2 {Finds virtual machine files on system}  
+-rshell {Simple reverse shell script}  
 -ABBF {Bruteforce Android device bootloader codes}  
 
 ## Please note;  
