@@ -2,6 +2,7 @@
 TO DO:
 -Theoretically, this would take a long time to complete, even with multithreading  
 to make this tool viable, cloud  computing resources would need to be used to speed up the bruteforcing process  
+-Add user input variables to determine length of code and save time bruteforcing  
 """
 
 import subprocess
