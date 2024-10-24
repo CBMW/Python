@@ -1,7 +1,7 @@
 # Python  
 Collection of Python scripts  
 -FlashCardX {Simple flash card study assistant}  
--VMFinder2 {Finds virtual machine files on system} 
+-VMFinder2 {Finds virtual machine files on system}  
 -Android Fastboot Bootloader Bruteforce {Bruceforces unlock codes via fastboot}
 
 ## Please note;  
