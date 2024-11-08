@@ -18,7 +18,7 @@ def remove_bg(inpath, outpath):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-def go_again():
+def go_again(outpath):
     """Ask the user if they want to open the image and/or manipulate another image."""
     open_choice = input("Open with default image viewer? (Y/N): ").strip().upper()
     if open_choice == 'Y':
@@ -33,7 +33,7 @@ def main():
         inpath, outpath = user_input()
         remove_bg(inpath, outpath)
         
-        if not go_again():
+        if not go_again(outpath):
             print("Exiting program.")
             break
 
